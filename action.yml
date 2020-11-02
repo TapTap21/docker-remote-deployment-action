@@ -17,9 +17,6 @@ inputs:
   stack_file_name:
     description: Docker stack file used. Default is docker-compose.yaml
     required: false
-  pre_deployment_command_args:
-    description: The args for the pre deploument command.
-    required: false
   ssh_port:
     description: The ssh port of the server. Default is 22
     required: false
@@ -35,7 +32,7 @@ inputs:
 
 runs:
   using: docker
-  image: Dockerfile
+  image: docker://taptap21/docker-remote-deployment-action:v1.0
 
 branding:
   icon: send

@@ -1,0 +1,27 @@
+name: Example usage
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./Dockerfile
+          push: true
+          tags: |
+            taptap21/docker-remote-deployment-action:latest
+            taptap21/docker-remote-deployment-action:${{ github.event.release.tag_name }}
+
+
+
