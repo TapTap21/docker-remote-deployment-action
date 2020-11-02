@@ -1,4 +1,4 @@
-name: Example usage
+name: Release
 
 on:
   release:
