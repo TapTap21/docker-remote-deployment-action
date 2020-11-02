@@ -61,6 +61,7 @@ ssh-add ~/.ssh/id_rsa
 echo "Add known hosts"
 #printf '%s %s\n' "$SSH_HOST" "$INPUT_SSH_PUBLIC_KEY" >> /etc/ssh/ssh_known_hosts
 ssh-keyscan "$SSH_HOST" >> ~/.ssh/known_hosts
+echo "Add known hosts etc"
 ssh-keyscan "$SSH_HOST" >> /etc/ssh/ssh_known_hosts
 # set context
 echo "Create docker context"
