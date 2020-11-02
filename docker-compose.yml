@@ -1,0 +1,8 @@
+version: "3.3"
+
+services:
+  webapp:
+    image: 832064218730.dkr.ecr.eu-west-1.amazonaws.com/api-test:1dd970e
+    ports:
+      - 8080:8080
+    network_mode: bridge
