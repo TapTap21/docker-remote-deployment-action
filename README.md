@@ -1,6 +1,6 @@
 # Docker Deployment Action
-A [GitHub Action](https://github.com/marketplace/actions/docker-deployment) for docker-compose deployments on a remote host using SSH.
-TODO: Update action URL
+A [GitHub Action](https://github.com/marketplace/actions/docker-compose-remote-deployment) for docker-compose deployments on a remote host using SSH.
+
 The Action is adapted from work by [wshihadeh](https://github.com/marketplace/actions/docker-deployment)
 
 
