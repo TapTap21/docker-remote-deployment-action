@@ -32,7 +32,8 @@ inputs:
 
 runs:
   using: docker
-  image: Dockerfile
+  image: docker://taptap21/docker-remote-deployment-action:v1.1
+
 
 branding:
   icon: send
