@@ -12,14 +12,14 @@ Below is an example of how the action can be used
 - name: Start Deployment
   uses: TapTap21/docker-remote-deployment-action@v1.0
   with:
-  remote_docker_host: ec2-user@ec2-34-246-134-80.eu-west-1.compute.amazonaws.com
-  ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
-  ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
-  stack_file_name: docker-compose.yml
-  docker_login_password: ${{ secrets.DOCKER_REPO_PASSWORD }}
-  docker_login_user: ${{ secrets.DOCKER_REPO_USERNAME }}
-  docker_login_registry : ${{ steps.login-ecr.outputs.registry }}
-  args: -p myapp up -d
+    remote_docker_host: ec2-user@ec2-34-246-134-80.eu-west-1.compute.amazonaws.com
+    ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
+    ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
+    stack_file_name: docker-compose.yml
+    docker_login_password: ${{ secrets.DOCKER_REPO_PASSWORD }}
+    docker_login_user: ${{ secrets.DOCKER_REPO_USERNAME }}
+    docker_login_registry : ${{ steps.login-ecr.outputs.registry }}
+    args: -p myapp up -d
 ```
 
 Use the latest tag to run the latest build or a specific version tag. The action pulls a docker image instead of building one to improve performance.
