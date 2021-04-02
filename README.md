@@ -53,7 +53,10 @@ The SSH port to be used. Default is 22.
 
 ### `stack_file_name`
 
-Docker stack file used. Default is docker-compose.yml
+Docker stack file(s) used. Can be several files seperated by commas that
+will be passed to docker-compose in order. Default is running
+docker-compose without any -f flags (which will use docker-compose.yml overriden
+by docker-compose.override.yml if there is one).
 
 ### `docker_login_user`
 

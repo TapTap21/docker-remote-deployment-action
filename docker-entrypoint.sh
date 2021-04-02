@@ -29,18 +29,19 @@ if [ -z "$INPUT_ARGS" ]; then
 fi
 
 if [ -z "$INPUT_STACK_FILE_NAME" ]; then
-  INPUT_STACK_FILE_NAME=docker-compose.yml
+  DEPLOYMENT_COMMAND="docker-compose"
+else
+  # convert comma seperated filenames to docker-compose -f
+  # 'a,b,c' -> '-f a -f b -f c'
+  DOCKER_COMPOSE_FILE_FLAGS="$(echo "$INPUT_STACK_FILE_NAME" | sed 's/^/-f /' | sed 's/,/ -f /')"
+  DEPLOYMENT_COMMAND="docker-compose $DOCKER_COMPOSE_FILE_FLAGS"
 fi
 
 if [ -z "$INPUT_SSH_PORT" ]; then
   INPUT_SSH_PORT=22
 fi
 
-STACK_FILE=${INPUT_STACK_FILE_NAME}
 DEPLOYMENT_COMMAND_OPTIONS="--host ssh://$INPUT_REMOTE_DOCKER_HOST:$INPUT_SSH_PORT"
-
-DEPLOYMENT_COMMAND="docker-compose -f $STACK_FILE"
-
 
 SSH_HOST=${INPUT_REMOTE_DOCKER_HOST#*@}
 
