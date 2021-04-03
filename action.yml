@@ -15,7 +15,11 @@ inputs:
     description: Deployment command args.
     required: true
   stack_file_name:
-    description: Docker stack file used. Default is docker-compose.yaml
+    description: |
+      Docker stack file(s) used. Can be several files seperated by commas that
+      will be passed to docker-compose in order. Default is running
+      docker-compose without any -f flags (which will use docker-compose.yml overriden
+      by docker-compose.override.yml if there is one).
     required: false
   ssh_port:
     description: The ssh port of the server. Default is 22
