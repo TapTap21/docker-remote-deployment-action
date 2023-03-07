@@ -78,4 +78,6 @@ ${DEPLOYMENT_COMMAND} ${DEPLOYMENT_COMMAND_OPTIONS} pull
 echo "Command: ${DEPLOYMENT_COMMAND} ${INPUT_ARGS}"
 ${DEPLOYMENT_COMMAND} ${DEPLOYMENT_COMMAND_OPTIONS} ${INPUT_ARGS}
 
+echo "Remove docker context"
+docker context rm staging
 
